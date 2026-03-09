@@ -1,0 +1,13 @@
+# Caché de Visual Studio y archivos temporales (archivos muy pesados)
+.vs/
+*.ipch
+*.user
+*.suo
+*.db
+*.log
+
+# Carpetas de compilación (archivos binarios que no van al código fuente)
+Debug/
+Release/
+x64/
+x86/
