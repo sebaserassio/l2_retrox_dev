@@ -1,0 +1,11 @@
+INSERT INTO [dbo].[hwid_new_log] (fecha, hwid)
+SELECT DISTINCT 
+       GETDATE() as fecha, 
+       [long_hardware_id] as hwid
+FROM [user_data]
+WHERE [long_hardware_id] IS NOT NULL
+AND NOT EXISTS (
+    SELECT 1 
+    FROM [dbo].[hwid_new_log] 
+    WHERE hwid = [user_data].[long_hardware_id]
+)
